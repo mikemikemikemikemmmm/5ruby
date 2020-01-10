@@ -3,19 +3,25 @@
   "version": "1.0.0",
   "main": "./src/root.js",
   "repository": "https://github.com/mikemikemikemikemmmm/5ruby.git",
-  "engines" : { "node" : ">=10.15.3" },
+  "engines": {
+    "node": ">=10.15.3"
+  },
   "author": "mikemikemikemikemmmm <36297097+mikemikemikemikemmmm@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "lint":"eslint ./src/**",
-    "start":"webpack"
+    "lint": "eslint ./src/**",
+    "build": "webpack",
+    "start": "webpack-dev-server --hot"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "^16.11.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hot-loader": "^4.12.18",
     "react-redux": "^7.1.3",
     "react-router": "^5.1.2",
     "redux": "^4.0.5"
@@ -33,7 +39,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^24.9.0",
+    "react-dev-utils": "^10.0.0",
     "react-test-renderer": "^16.12.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
