@@ -32,9 +32,18 @@ module.exports = {
                 test: /\.scss$/,
                 include: /src/,
                 use: [
-                    { loader: 'style-loader' }, 
+                    { loader: 'style-loader' },
                     { loader: 'css-loader' },
                     { loader: 'sass-loader' }
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                include: /src/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                    },
                 ],
             },
         ]
