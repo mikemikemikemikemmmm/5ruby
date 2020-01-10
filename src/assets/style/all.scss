@@ -1,4 +1,12 @@
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss" ;
+
 @import "../../../node_modules/bootstrap/scss/functions";
+
 @import "./customVariables.scss";
-@import "../../../node_modules/bootstrap/scss/mixins";
+
+@import "../../../node_modules/bootstrap/mixins/breakpoints";
+@import "../../../node_modules/bootstrap/mixins/grid-framework";
+@import "../../../node_modules/bootstrap/mixins/grid";
+@import "../../../node_modules/bootstrap/grid";
+@import "../../../node_modules/bootstrap/utilities/display";
+@import "../../../node_modules/bootstrap/utilities/flex";
+@import "../../../node_modules/bootstrap/utilities/spacing";
