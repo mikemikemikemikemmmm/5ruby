@@ -1,9 +1,8 @@
+import React from 'react';
+import '../assets/style/all.scss';
 
-import React from 'react'
-import "../assets/style/all.scss"
-const Index = () => {
+export default function Index() {
   return (
     <div>123477756</div>
-  )
-}
-export default Index
+  );
+};

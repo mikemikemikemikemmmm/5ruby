@@ -1,6 +1,8 @@
-
+@import "./reset.scss";
 
 @import "../../../node_modules/bootstrap/scss/bootstrap";
-@import "./customVariables.scss";
+@import "./customBootstrapVariables.scss";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
+
+//@import "./globalClass.scss"
