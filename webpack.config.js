@@ -30,6 +30,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
+                include: /src/,
                 use: [
                     { loader: 'style-loader' }, 
                     { loader: 'css-loader' },
