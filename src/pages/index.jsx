@@ -3,7 +3,7 @@ import React from 'react';
 export default function Index() {
   return (
     <>
-      <section className=''></section>
+      <section className=""></section>
       <section className="about5Ruby"></section>
       <section className="hotClassRecommend"></section>
       <section className="classRecommend"></section>
@@ -11,4 +11,4 @@ export default function Index() {
       <section className="knowMore"></section>
     </>
   );
-};
+}

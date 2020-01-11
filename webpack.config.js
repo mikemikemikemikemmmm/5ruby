@@ -2,11 +2,10 @@ const path = require('path')
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: ['./src/root.js', 'react-hot-loader/patch'],
+    entry: ['./src/root.jsx', 'react-hot-loader/patch'],
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: 'dist/'
     },
     module: {
         rules: [
