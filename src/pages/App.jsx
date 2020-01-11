@@ -20,10 +20,12 @@ export default function App() {
     <Router>
       <Header />
       <Switch>
-        <Route exact path="/" render={() => <Index />} />
-        <Route path="/contact" render={() => <Contact />} />
-        <Route path="/post" render={() => <Post />} />
-        <Route path="/post" render={() => <NoMatch />} />
+        <main className="container-fluid">
+          <Route exact path="/" render={() => <Index />} />
+          <Route path="/contact" render={() => <Contact />} />
+          <Route path="/post" render={() => <Post />} />
+          <Route path="/post" render={() => <NoMatch />} />
+        </main>
       </Switch>
       <Footer />
     </Router>

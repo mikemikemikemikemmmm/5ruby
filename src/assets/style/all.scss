@@ -1,8 +1,5 @@
 @import "./reset.scss";
-
-@import "../../../node_modules/bootstrap/scss/bootstrap";
-@import "./customBootstrapVariables.scss";
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins";
+@import "./fontawesome.min.css";
+@import "./bootstrap-grid.min.css"
 
 //@import "./globalClass.scss"

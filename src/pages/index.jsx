@@ -1,8 +1,14 @@
 import React from 'react';
-import '../assets/style/all.scss';
 
 export default function Index() {
   return (
-    <div>123477756</div>
+    <>
+      <section className=''></section>
+      <section className="about5Ruby"></section>
+      <section className="hotClassRecommend"></section>
+      <section className="classRecommend"></section>
+      <section className="showcase"></section>
+      <section className="knowMore"></section>
+    </>
   );
 };

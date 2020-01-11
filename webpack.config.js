@@ -5,7 +5,8 @@ module.exports = {
     entry: ['./src/root.js', 'react-hot-loader/patch'],
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: 'dist/'
     },
     module: {
         rules: [
@@ -43,6 +44,9 @@ module.exports = {
                 use: [
                     {
                         loader: 'url-loader',
+                        options:{
+                            limit:40000
+                        }
                     },
                 ],
             },
@@ -52,7 +56,18 @@ module.exports = {
         extensions: ['.jsx', '.js'],
         alias: { 'react-dom': '@hot-loader/react-dom' }
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'public/index.html')
-    })]
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'public/index.html'),
+            hash: true,
+            minify: {
+                removeAttributeQuotes: true,
+                collapseWhitespace: true,
+            }
+        }),
+
+    ],
+    devServer: {
+        compress: true
+    }
 };

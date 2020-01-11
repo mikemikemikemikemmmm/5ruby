@@ -11,6 +11,7 @@ ReactDOM.render(
 );
 
 if (module.hot) {
+  console.log(123)
   module.hot.accept('./pages/App.jsx', () => {
     const NextRootContainer = require('./pages/App.jsx').default;
     render(NextRootContainer);

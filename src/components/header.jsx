@@ -2,7 +2,7 @@ import React from 'react';
 import ImgWrapper from './imgWrapper';
 import '../assets/style/pages/header.scss';
 import { NavLink, Link } from 'react-router-dom'
-
+import "@fortawesome/fontawesome-free"
 export default function Header() {
   return (
     <header className='container-fluid display-flex'>
