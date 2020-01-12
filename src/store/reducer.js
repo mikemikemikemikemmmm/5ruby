@@ -1,11 +1,18 @@
-import { createStore } from 'redux'
-function isLoading(state = false, action) {
+
+
+const initialState = {
+  isLoading: false,
+  jsonData: {}
+}
+
+export default function reducer(state = initialState, action) {
   switch (action.type) {
-  case 'TRUE_LOADING':
-    return state 
-  case 'DECREMENT':
-    return state - 1
-  default:
-    return state
+    case 'SET_LOADING':
+      return { ...state, isLoading: action.value }
+    case 'SET_JSONDATA':
+      const _jsonData = Object.assign({}, state.jsonData)
+      return { ...state, jsonData: { ..._jsonData, [action.value.key]: action.value.json } }
+    default:
+      return state
   }
 }

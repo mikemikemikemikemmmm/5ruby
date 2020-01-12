@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function IndexSectionItemTitle(props) {
+export default function SectionItemTitle(props) {
   const { title } = props
   return (
     <>
@@ -13,6 +13,6 @@ export default function IndexSectionItemTitle(props) {
   )
 }
 
-indexSectionItemTitle.propTypes = {
+SectionItemTitle.propTypes = {
   title: PropTypes.string
 };

@@ -1,33 +1,37 @@
-import React from 'react';
+
+import React from 'react'
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
 } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-
 import Contact from './contact';
 import Post from './post';
 import Index from './index';
 import NoMatch from './noMatch';
 
+import reducer from '@/store/reducer'
+
 import '../assets/style/all.scss';
 
+const store = createStore(reducer)
 export default function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
         <main className="container-fluid">
-          <Route exact path="/" render={() => <Index />} />
-          <Route path="/contact" render={() => <Contact />} />
-          <Route path="/post" render={() => <Post />} />
-          <Route path="/post" render={() => <NoMatch />} />
+          <Switch>
+            <Route path="/" component={Index} />
+          </Switch>
         </main>
-      </Switch>
-      <Footer />
-    </Router>
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   );
 }

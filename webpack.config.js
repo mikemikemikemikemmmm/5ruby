@@ -28,7 +28,7 @@ module.exports = {
                 loader: "babel-loader",
                 options: {
                     presets: ['@babel/preset-env', '@babel/preset-react'],
-                    plugins: ["react-hot-loader/babel"]
+                    plugins: ["react-hot-loader/babel","@babel/plugin-transform-runtime"]
                 }
             },
             {
@@ -37,7 +37,7 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     { loader: 'css-loader' },
-                    { loader: 'postcss-loader'},
+                    { loader: 'postcss-loader' },
                     { loader: 'sass-loader' }
                 ],
             },
@@ -86,7 +86,7 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-          chunks: "all", 
+            chunks: "all",
         },
-      },
+    },
 };

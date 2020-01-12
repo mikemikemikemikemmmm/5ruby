@@ -15,13 +15,14 @@ import PropTypes from 'prop-types';
  */
 export default function ImgWrapper(props) {
   const requireImg = require(`../assets/img/${props.src}`).default
-  const { alt } = props
+  const { alt, imgClass } = props
   return (
-    <img src={requireImg} alt={alt} />
+    <img src={requireImg} alt={alt} className={imgClass} />
   );
 }
 
 ImgWrapper.propTypes = {
-  src: PropTypes.string,
-  alt: PropTypes.string
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  imgClass:PropTypes.string
 };
