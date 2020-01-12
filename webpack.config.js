@@ -1,6 +1,8 @@
 const path = require('path')
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
     entry: ['./src/root.jsx', 'react-hot-loader/patch'],
     output: {
@@ -16,6 +18,7 @@ module.exports = {
                 loader: "eslint-loader",
                 options: {
                     formatter: eslintFormatter,
+                    // not emit error, then even js has error, and still can be complie
                     emitWarning: true,
                 }
             },
@@ -32,8 +35,9 @@ module.exports = {
                 test: /\.scss$/,
                 include: /src/,
                 use: [
-                    { loader: 'style-loader' },
+                    MiniCssExtractPlugin.loader,
                     { loader: 'css-loader' },
+                    { loader: 'postcss-loader'},
                     { loader: 'sass-loader' }
                 ],
             },
@@ -43,8 +47,9 @@ module.exports = {
                 use: [
                     {
                         loader: 'url-loader',
-                        options:{
-                            limit:40000
+                        options: {
+                            outputPath: 'images/',
+                            limit: 10 * 1024
                         }
                     },
                 ],
@@ -53,7 +58,10 @@ module.exports = {
     },
     resolve: {
         extensions: ['.jsx', '.js'],
-        alias: { 'react-dom': '@hot-loader/react-dom' }
+        alias: {
+            'react-dom': '@hot-loader/react-dom',
+            '@': path.join(__dirname, "src")
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -64,9 +72,21 @@ module.exports = {
                 collapseWhitespace: true,
             }
         }),
-
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        })
     ],
     devServer: {
-        compress: true
-    }
+        compress: true,
+    },
+    watchOptions: {
+        //not watch file in node_modules
+        ignored: /node_modules/,
+    },
+    optimization: {
+        splitChunks: {
+          chunks: "all", 
+        },
+      },
 };

@@ -12,7 +12,7 @@ ReactDOM.render(
 );
 
 if (module.hot) {
-  console.log(123);
+  console.log('in hot');
   module.hot.accept('./pages/App.jsx', () => {
     const NextRootContainer = require('./pages/App.jsx').default;
     render(NextRootContainer);
