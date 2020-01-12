@@ -5,11 +5,11 @@ import useGetJson from '@/utils/useGetJson'
 import SectionItemTitle from '@/components/index/sectionItemTitle'
 import About5RubyCard from '@/components/index/about5RubyCard'
 import HotClassRecommendCard from '@/components/index/hotClassRecommendCard'
+import data from '@/assets/staticData/index.json'
 
 export default function Index() {
   const isLoading = useSelector(state => state.isLoading);
   const dispatch = useDispatch();
-  const data = useGetJson('index.json', dispatch)
   return (
     <>{
       data ?
