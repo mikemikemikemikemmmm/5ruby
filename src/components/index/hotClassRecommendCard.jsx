@@ -13,13 +13,13 @@ const authors = {
 }
 
 export default function hotClassRecommendCard(props) {
-  const { title, content, imgSrc, date, hours, statusIndex, authorIndex,fileName } = props
+  const { title, content, imgSrc, date, hours, statusIndex, authorIndex,fileName,cardClass } = props
   return (
-    <div className='hotClassRecommend'>
-      <ImgWrapper fileName={fileName} path='index/hotClass/' />
-      <div className='hotClassRecommend__title'>
+    <div className={`hotClassRecommend ${cardClass}`}>
+      <ImgWrapper fileName={fileName} path='index/hotClass/' imgClass='hotClassRecommend__img' />
+      <h4 className='hotClassRecommend__title'>
         {title}
-      </div>
+      </h4>
       <div>
         <div className='hotClassRecommend__status'>
           {status[statusIndex]}

@@ -25,7 +25,7 @@ export default function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-        <main className="container-fluid">
+        <main>
           <Switch>
             <Route path="/" component={Index} />
           </Switch>

@@ -7,52 +7,59 @@ import HotClassRecommendCard from '@/components/index/hotClassRecommendCard'
 import ShowCaseCard from '@/components/index/showCaseCard'
 import data from '@/assets/staticData/index.json'
 
+import '@/assets/style/pages/index.scss'
 export default function Index() {
   const isLoading = useSelector(state => state.isLoading);
   const dispatch = useDispatch();
   return (
     <>{
       Object.keys(data).length !== 0 ?
-        <>
-          <section className=""></section>
-          {<section>
-            <SectionItemTitle title={data.sections[0].title} />
-            <div>
-              {data.sections[0].cards.map(card =>
-                <About5RubyCard {...card} key={card.fileName} />
-              )}
-            </div>
-
-          </section>}
-          {<section>
-            <SectionItemTitle title={data.sections[1].title} />
-            <div>
-              {data.sections[1].cards.map(card =>
-                <HotClassRecommendCard {...card} key={card.fileName} />
-              )}
-            </div>
-            <button>看更多網頁課程</button>
+        <section>
+          <section>
 
           </section>
+          {
+            <section className='bg-gray container-fluid'>
+              <SectionItemTitle title={data.sections[0].title} />
+              <div className='row justify-content-center'>
+                <div className='row col-10'>
+                  {data.sections[0].cards.map(card =>
+                    <About5RubyCard {...card} cardClass='col-lg-3 col-sm-12' key={card.fileName} />
+                  )}
+                </div>
+              </div>
+            </section>
           }
           {
-            <section>
+            <section className='container-fluid'>
+              <SectionItemTitle title={data.sections[1].title} />
+              <div className='row justify-content-center'>
+                <div className='row col-10'>
+                  {data.sections[1].cards.map(card =>
+                    <HotClassRecommendCard {...card} cardClass='col-lg-4 col-md-6 col-sm-12' key={card.fileName} />
+                  )}
+                </div>
+              </div>
+              <button>看更多網頁課程</button>
+            </section>
+          }
+          {
+            <section className='bg-gray'>
               <SectionItemTitle title={data.sections[2].title} />
             </section>
           }
           {
             <section>
               <SectionItemTitle title={data.sections[3].title} />
-              <div>
+              <div className='row'>
                 {data.sections[3].cards.map(card =>
-                  <ShowCaseCard {...card} key={card.fileName} />
+                  <ShowCaseCard {...card} cardClass='col-4' key={card.fileName} />
                 )}
               </div>
               <button>...更多案例</button>
             </section>
           }
-
-        </> :
+        </section> :
         <div>loading</div>
     }
     </>

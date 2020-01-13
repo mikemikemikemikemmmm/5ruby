@@ -21,9 +21,9 @@ export default function Header() {
           return (
             <NavLink to={link.to} key={link.title} className="navLinkGroup__btn">
               <FontAwesomeIcon icon={faCompass} />
-              ASTRO Camp
-              <div className="ASTRO__signUp">
                 {link.title}
+              <div className="ASTRO__signUp">
+                報名優惠中
               </div>
             </NavLink >
           )

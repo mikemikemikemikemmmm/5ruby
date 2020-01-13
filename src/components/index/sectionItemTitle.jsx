@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 export default function SectionItemTitle(props) {
   const { title } = props
   return (
-    <>
-      <div className='indexSectionItemTitle__title'>
+    <div className='indexSectionItemTitle'>
+      <h3 className='indexSectionItemTitle__title'>
         {title}
-      </div>
+      </h3>
       <div className='indexSectionItemTitle__lineUnderTitle'></div>
-    </>
+    </div>
   )
 }
 
