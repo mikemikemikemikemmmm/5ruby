@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import useGetJson from '@/utils/useGetJson'
 import SectionItemTitle from '@/components/index/sectionItemTitle'
 import About5RubyCard from '@/components/index/about5RubyCard'
 import HotClassRecommendCard from '@/components/index/hotClassRecommendCard'
