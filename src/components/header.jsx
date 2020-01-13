@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <header className="container-fluid display-flex">
       <Link className="logoLink" to="/">
-        <ImgWrapper src={'header/logo.png'} />
+        <ImgWrapper fileName='logo.png' path='header/' />
       </Link>
       <nav className="navLinkGroup">
         {

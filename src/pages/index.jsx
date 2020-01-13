@@ -12,24 +12,23 @@ export default function Index() {
   const dispatch = useDispatch();
   return (
     <>{
-      data ?
+      Object.keys(data).length !== 0 ?
         <>
           <section className=""></section>
           {<section>
             <SectionItemTitle title={data.sections[0].title} />
             <div>
               {data.sections[0].cards.map(card =>
-                <About5RubyCard {...card} key={card.imgSrc} />
+                <About5RubyCard {...card} key={card.fileName} />
               )}
             </div>
 
           </section>}
           {<section>
-
             <SectionItemTitle title={data.sections[1].title} />
             <div>
               {data.sections[1].cards.map(card =>
-                <HotClassRecommendCard {...card} key={card.imgSrc} />
+                <HotClassRecommendCard {...card} key={card.fileName} />
               )}
             </div>
             <button>看更多網頁課程</button>
@@ -46,7 +45,7 @@ export default function Index() {
               <SectionItemTitle title={data.sections[3].title} />
               <div>
                 {data.sections[3].cards.map(card =>
-                  <ShowCaseCard {...card} key={card.imgSrc} />
+                  <ShowCaseCard {...card} key={card.fileName} />
                 )}
               </div>
               <button>...更多案例</button>

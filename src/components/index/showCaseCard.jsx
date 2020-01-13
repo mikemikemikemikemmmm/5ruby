@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ImgWrapper from '@/components/imgWrapper'
 export default function showCaseCard(props) {
-  const { title, content, imgSrc } = props
-  console.log(imgSrc)
+  const { title, content, imgSrc,fileName } = props
   return (
     <div className='showCase'>
-      <ImgWrapper src={imgSrc}  alt={title}/>
+      <ImgWrapper fileName={fileName} path="index/showCase/" alt={title}/>
       <div className='showCase__title'>
         {title}
       </div>
@@ -22,5 +21,5 @@ export default function showCaseCard(props) {
 showCaseCard.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string.isRequired
+  imgSrc: PropTypes.string
 };

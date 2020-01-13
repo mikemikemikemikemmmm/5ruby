@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ImgWrapper from '@/components/imgWrapper'
 export default function about5RubyCard(props) {
-  const { title, content, imgSrc } = props
+  const { title, content, imgSrc ,fileName} = props
   return (
     <div className='about5Ruby'>
-      <ImgWrapper src={imgSrc}  alt={title}/>
+      <ImgWrapper fileName={fileName} path='index/about/' alt={title}/>
       <div className='about5Ruby__title'>
         {title}
       </div>
@@ -21,5 +21,5 @@ export default function about5RubyCard(props) {
 about5RubyCard.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string.isRequired
+  imgSrc: PropTypes.string
 };
