@@ -12,14 +12,14 @@ export default function Header() {
       switch (index) {
         case 0:
           return (
-            <NavLink to={link.to} className="navLinkGroup__btn">
+            <NavLink to={link.to} key={link.title} className="navLinkGroup__btn">
               <FontAwesomeIcon icon={faGem} />
               {link.title}
             </NavLink>
           )
         case 1:
           return (
-            <NavLink to={link.to} className="navLinkGroup__btn">
+            <NavLink to={link.to} key={link.title} className="navLinkGroup__btn">
               <FontAwesomeIcon icon={faCompass} />
               ASTRO Camp
               <div className="ASTRO__signUp">
@@ -29,7 +29,7 @@ export default function Header() {
           )
         default:
           return (
-            <NavLink to={link.to} className="navLinkGroup__btn">
+            <NavLink to={link.to} key={link.title} className="navLinkGroup__btn">
               {link.title}
             </NavLink>
           )

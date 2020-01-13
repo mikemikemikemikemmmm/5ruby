@@ -24,6 +24,17 @@ export default function Index() {
               </div>
             </section>
           }
+          {
+            <section>
+              <SectionItemTitle title={data.sections[1].title} />
+              <div>
+                {data.sections[1].cards.map(card =>
+                  <HotClassRecommendCard {...card} key={card.imgSrc} />
+                )}
+              </div>
+              <button>看更多網頁課程</button>
+            </section>
+          }
 
         </> :
         <div>loading</div>

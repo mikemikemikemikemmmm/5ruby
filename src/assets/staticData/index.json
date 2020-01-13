@@ -3,10 +3,8 @@
     "imgSrc": "",
     "href": ""
   }],
-  "sections": [
-    {
+  "sections": [{
       "title": "關於五倍紅寶石 About 5xRuby",
-      "backGroundColor": "",
       "cards": [{
         "title": "網頁設計\n前後端課程教學",
         "content": "帶你掌握程式技能轉職工程師，程式課程從入門到進階讓你快速上手，學員好評推薦轉職課程！",
@@ -27,11 +25,31 @@
     },
     {
       "title": "熱門網頁設計課程推薦",
-      "backGroundColor": "",
+      
       "cards": [{
-        "title": "",
-        "content": "",
-        "imgSrc": ""
+        "title": "Ruby on Rails 實戰課程 - 假日班",
+        "content": "後臺開發不是夢！實戰程度百分百的 Ruby & Rails 課程 。具備高度生產力，簡潔、有效率的編寫，即便是初學者也能快速上手的 Ruby 程式語言 ，搭配 Rails 框架，短時間內部署自己的專案。從電商網站到金流平台串接， 5 天課程帶您走過專案流程，熟悉整體架構。",
+        "imgSrc": "index/hotClass/ror.jpg",
+        "date": "2019-12-07",
+        "hours": "30",
+        "statusIndex": "open",
+        "authorIndex": "1"
+      }, {
+        "title": "工作上用得到的函數式程式設計：從觀念到實務 - 假日班",
+        "content": "隨著多核心電腦成為主流、分散式系統架構也成為顯學，函數式程式設計的重要性也與日俱增。跟物件導向程式設計相比，函數式程式設計著重於用更簡潔的方向表達程式碼真正的意圖。因此當學會用與物件導向程式程計不同的角度來寫程式後，可以讓你在切換不同的程式語言時依然能游刃有餘。這門課將會透過一門好入手的非純函數式語言 Elixir 開始， 教大家最重要的函數式程式設計觀念。 接著介紹如何在 Ruby、 JavaScript(也許還有一點 C#) 上使用函數式程式設計的技巧。 讓你寫出精簡、 好除錯的厲害程式碼！ ",
+        "imgSrc": "index/hotClass/function.jpg",
+        "date": "2020-02-22",
+        "hours": "9",
+        "statusIndex": "none",
+        "authorIndex": "2"
+      }, {
+        "title": "網頁設計班 - 假日班",
+        "content": "你還在困擾網頁該怎麼做 RWD 嗎？講師手把手教學，帶你快速上手 RWD，不僅教你技術及方法，還要建立你正確的網頁觀念，融會貫通後你將大幅提高自學能力，降低卡關浪費時間查找的困擾！",
+        "imgSrc": "index/hotClass/rwd.jpg",
+        "date": "2020-03-08",
+        "hours": "24",
+        "statusIndex": "none",
+        "authorIndex": "3"
       }]
     },
     {
