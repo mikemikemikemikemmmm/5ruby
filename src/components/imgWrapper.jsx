@@ -27,7 +27,7 @@ export default function ImgWrapper(props) {
   if (!src) {
     return null
   }
-  return <img src={src} />
+  return <img src={src} alt={alt} className={imgClass}/>
 }
 
 ImgWrapper.propTypes = {
