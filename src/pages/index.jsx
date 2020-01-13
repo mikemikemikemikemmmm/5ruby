@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import SectionItemTitle from '@/components/index/sectionItemTitle'
 import About5RubyCard from '@/components/index/about5RubyCard'
 import HotClassRecommendCard from '@/components/index/hotClassRecommendCard'
+import ShowCaseCard from '@/components/index/showCaseCard'
 import data from '@/assets/staticData/index.json'
 
 export default function Index() {
@@ -14,25 +15,41 @@ export default function Index() {
       data ?
         <>
           <section className=""></section>
+          {<section>
+            <SectionItemTitle title={data.sections[0].title} />
+            <div>
+              {data.sections[0].cards.map(card =>
+                <About5RubyCard {...card} key={card.imgSrc} />
+              )}
+            </div>
+
+          </section>}
+          {<section>
+
+            <SectionItemTitle title={data.sections[1].title} />
+            <div>
+              {data.sections[1].cards.map(card =>
+                <HotClassRecommendCard {...card} key={card.imgSrc} />
+              )}
+            </div>
+            <button>看更多網頁課程</button>
+
+          </section>
+          }
           {
             <section>
-              <SectionItemTitle title={data.sections[0].title} />
-              <div>
-                {data.sections[0].cards.map(card =>
-                  <About5RubyCard {...card} key={card.imgSrc} />
-                )}
-              </div>
+              <SectionItemTitle title={data.sections[2].title} />
             </section>
           }
           {
             <section>
-              <SectionItemTitle title={data.sections[1].title} />
+              <SectionItemTitle title={data.sections[3].title} />
               <div>
-                {data.sections[1].cards.map(card =>
-                  <HotClassRecommendCard {...card} key={card.imgSrc} />
+                {data.sections[3].cards.map(card =>
+                  <ShowCaseCard {...card} key={card.imgSrc} />
                 )}
               </div>
-              <button>看更多網頁課程</button>
+              <button>...更多案例</button>
             </section>
           }
 

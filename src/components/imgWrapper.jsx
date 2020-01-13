@@ -14,7 +14,8 @@ import PropTypes from 'prop-types';
  * @return JSX.element which include correct img src
  */
 export default function ImgWrapper(props) {
-  const requireImg = require(`../assets/img/${props.src}`).default
+  const requireImg = require(`@/assets/img/${props.src}`).default
+  console.log(requireImg)
   const { alt, imgClass } = props
   return (
     <img src={requireImg} alt={alt} className={imgClass} />
@@ -24,5 +25,7 @@ export default function ImgWrapper(props) {
 ImgWrapper.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
-  imgClass:PropTypes.string
+  imgClass:PropTypes.string,
+  path: PropTypes.string,
+  fileName: PropTypes.string,
 };

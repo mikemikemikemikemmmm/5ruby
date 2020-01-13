@@ -78,7 +78,6 @@ module.exports = {
         })
     ],
     devServer: {
-        compress: true,
     },
     watchOptions: {
         //not watch file in node_modules
