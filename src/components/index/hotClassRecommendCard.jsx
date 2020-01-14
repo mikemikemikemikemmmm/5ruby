@@ -13,7 +13,7 @@ const authors = {
 }
 
 export default function hotClassRecommendCard(props) {
-  const { title, content, imgSrc, date, hours, statusIndex, authorIndex,fileName,cardClass } = props
+  const { title, content, imgSrc, date, hours, statusIndex, authorIndex, fileName, cardClass } = props
   return (
     <div className={`hotClassRecommend ${cardClass}`}>
       <ImgWrapper fileName={fileName} path='index/hotClass/' imgClass='hotClassRecommend__img' />
@@ -21,9 +21,12 @@ export default function hotClassRecommendCard(props) {
         {title}
       </h4>
       <div>
-        <div className='hotClassRecommend__status'>
-          {status[statusIndex]}
-        </div>
+        {statusIndex !== 'none' ?
+          <div className='hotClassRecommend__status'>
+            {status[statusIndex]}
+          </div>
+          : null
+        }
         <div className='hotClassRecommend__date'>
           {date}
         </div>
@@ -48,5 +51,5 @@ hotClassRecommendCard.propTypes = {
   hours: PropTypes.string.isRequired,
   statusIndex: PropTypes.string.isRequired,
   authorIndex: PropTypes.string.isRequired,
-  fileName:PropTypes.string.isRequired
+  fileName: PropTypes.string.isRequired
 };

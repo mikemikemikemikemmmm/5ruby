@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { Link } from 'react-router-dom'
 import SectionItemTitle from '@/components/index/sectionItemTitle'
 import About5RubyCard from '@/components/index/about5RubyCard'
 import HotClassRecommendCard from '@/components/index/hotClassRecommendCard'
@@ -15,11 +15,12 @@ export default function Index() {
     <>{
       Object.keys(data).length !== 0 ?
         <section>
+          <div className='text-primary bg-secondary'>123</div>
           <section>
 
           </section>
           {
-            <section className='bg-gray container-fluid'>
+            <section className='bg-gray container-fluid sectionContainer-pd'>
               <SectionItemTitle title={data.sections[0].title} />
               <div className='row justify-content-center'>
                 <div className='row col-10'>
@@ -31,7 +32,7 @@ export default function Index() {
             </section>
           }
           {
-            <section className='container-fluid'>
+            <section className='container-fluid sectionContainer-pd'>
               <SectionItemTitle title={data.sections[1].title} />
               <div className='row justify-content-center'>
                 <div className='row col-10'>
@@ -40,16 +41,16 @@ export default function Index() {
                   )}
                 </div>
               </div>
-              <button>看更多網頁課程</button>
+              <Link className='hotClassRecommend__btn'>看更多網頁課程</Link>
             </section>
           }
           {
-            <section className='bg-gray'>
+            <section className='bg-gray sectionContainer-pd'>
               <SectionItemTitle title={data.sections[2].title} />
             </section>
           }
           {
-            <section>
+            <section className='sectionContainer-pd'>
               <SectionItemTitle title={data.sections[3].title} />
               <div className='row'>
                 {data.sections[3].cards.map(card =>
