@@ -4,14 +4,16 @@ import ImgWrapper from '@/components/imgWrapper'
 export default function about5RubyCard(props) {
   const { title, content, cardClass, fileName, title2 } = props
   return (
-    <div className={`about5Ruby ${cardClass}`}>
-      <ImgWrapper fileName={fileName} path='index/about/' alt={title} imgClass='about5Ruby__img' />
-      <div className='about5Ruby__title'>
+    <div className={`text-center ${cardClass}`}>
+      <div className='aboutCard__img mx-auto'>
+        <ImgWrapper fileName={fileName} path='index/about/' alt={title} />
+      </div>
+      <div className='font-size-5 text-title pt-3 '>
         {title}
         <br/>
           {title2}
       </div>
-        <div className='about5Ruby__content'>
+        <div className='py-3 text-content '>
           <p>
             {content}
           </p>

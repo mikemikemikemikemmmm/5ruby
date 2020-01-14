@@ -15,29 +15,31 @@ const authors = {
 export default function hotClassRecommendCard(props) {
   const { title, content, imgSrc, date, hours, statusIndex, authorIndex, fileName, cardClass } = props
   return (
-    <div className={`hotClassRecommend ${cardClass}`}>
-      <ImgWrapper fileName={fileName} path='index/hotClass/' imgClass='hotClassRecommend__img' />
-      <h4 className='hotClassRecommend__title'>
-        {title}
-      </h4>
-      <div>
-        {statusIndex !== 'none' ?
-          <div className='hotClassRecommend__status'>
-            {status[statusIndex]}
+    <div className={cardClass} >
+      <div className='card-border'>
+        <ImgWrapper fileName={fileName} path='index/hotClass/' imgClass='hotClassRecommend__img' />
+        <h4 className='px-3 py-2 font-bold font-size-4'>
+          {title}
+        </h4>
+        <div className='px-3'>
+          {statusIndex !== 'none' ?
+            <div className='d-inline-block px-2 bg-yellow text-info normal-radius font-size-1 mr-2'>
+              {status[statusIndex]}
+            </div>
+            : null
+          }
+          <div className='d-inline-block font-size-1 text-info pr-3'>
+            {date}
           </div>
-          : null
-        }
-        <div className='hotClassRecommend__date'>
-          {date}
         </div>
+        <div className='font-size-2 my-3 text-title px-3 overflow-h hotClass__content'>
+          <p>
+            {content}
+          </p>
+        </div>
+        <div className='font-size-1 text-info mb-1 px-3'>
+          講者： {authors[authorIndex]} | 時數： {hours} 小時
       </div>
-      <div className='hotClassRecommend__content'>
-        <p>
-          {content}
-        </p>
-      </div>
-      <div className='hotClassRecommend__footer'>
-        講者： {authors[authorIndex]} | 時數： {hours} 小時
       </div>
     </div>
   )

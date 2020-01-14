@@ -1,35 +1,34 @@
 import React from 'react';
 import ImgWrapper from './imgWrapper';
-import '../assets/style/pages/header.scss';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGem, faCompass } from '@fortawesome/free-solid-svg-icons'
 import data from '@/assets/staticData/header.json'
-
+import '@/assets/style/pages/header.scss'
 export default function Header() {
   const RenderNavLink = (data) => {
     return data.map((link, index) => {
       switch (index) {
         case 0:
           return (
-            <NavLink to={link.to} key={link.title} className="navLinkGroup__btn">
+            <NavLink to={link.to} key={link.title} className="p-3 text-nav">
               <FontAwesomeIcon icon={faGem} />
               {link.title}
             </NavLink>
           )
         case 1:
           return (
-            <NavLink to={link.to} key={link.title} className="navLinkGroup__btn">
+            <NavLink to={link.to} key={link.title} className="p-3 text-nav d-inline-flex">
               <FontAwesomeIcon icon={faCompass} />
-                {link.title}
-              <div className="ASTRO__signUp">
+              {link.title}
+              <div className="ml-1 px-1 bg-primary normal-radius text-white font-size-2 ASTRO__signUp">
                 報名優惠中
               </div>
             </NavLink >
           )
         default:
           return (
-            <NavLink to={link.to} key={link.title} className="navLinkGroup__btn">
+            <NavLink to={link.to} key={link.title} className="p-3 text-nav">
               {link.title}
             </NavLink>
           )
@@ -37,11 +36,11 @@ export default function Header() {
     })
   }
   return (
-    <header className="container-fluid display-flex">
-      <Link className="logoLink" to="/">
+    <header className="container-fluid d-flex align-items-center flex-nowrap">
+      <Link className="px-3 py-1" to="/">
         <ImgWrapper fileName='logo.png' path='header/' />
       </Link>
-      <nav className="navLinkGroup">
+      <nav className="ml-auto d-inline-flex">
         {
           data ?
             RenderNavLink(data)

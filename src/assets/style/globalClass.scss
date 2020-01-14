@@ -1,17 +1,87 @@
+@import "./variables.scss";
+
+/*color*/
+@each $key,
+$colorCode in $colorMap {
+  .text-#{$key} {
+    color: $colorCode;
+  }
+
+  .bg-#{$key} {
+    background-color: $colorCode;
+  }
+}
+
+/*html tag*/
 body {
   font-family: 微軟正黑體, arial;
+  color: #555;
+  font-size: 16px;
+  line-height: 24px;
 }
 
-.bg-gray {
-  background-color: rgb(247, 247, 247);
+a {
+  text-decoration: none;
 }
 
-.sectionContainer-pd {
-  padding: 1rem 0 1rem 0;
+/*position*/
+.position-r{
+  position: relative;
+}
+.position-a{
+  position: absolute;
+}
+
+/*component*/
+.titleUnderLine{
+  height: 3px;
+  width: 80px;
+}
+.hotClass__content{
+  height: 100px;
+}
+.aboutCard__img{
+  width: 120px;
+  height: 120px;
+}
+.sectionContainer{
+}
+/*font*/
+@each $key,
+$size in $fontSizeMap {
+  .font-size-#{$key} {
+    font-size: $size;
+  }
+}
+.font-bold{
+  font-weight: 700;
+}
+/*size*/
+.h-100per{
+  height: 100%;
+}
+.normal-radius {
+  border-radius: $radiusVar;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
 }
 
 .card-border {
   border: 1px solid #ddd;
 }
 
-.text-primary {}
+/*special*/
+.overflow-h{
+  overflow: hidden;
+}

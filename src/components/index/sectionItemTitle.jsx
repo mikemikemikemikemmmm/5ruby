@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 export default function SectionItemTitle(props) {
   const { title } = props
   return (
-    <div className='indexSectionItemTitle'>
-      <h3 className='indexSectionItemTitle__title'>
+    <div className='py-5'>
+      <h3 className='font-size-5 text-center pb-4'>
         {title}
       </h3>
-      <div className='indexSectionItemTitle__lineUnderTitle'></div>
+      <div className='titleUnderLine text-center mx-auto bg-primary'></div>
     </div>
   )
 }

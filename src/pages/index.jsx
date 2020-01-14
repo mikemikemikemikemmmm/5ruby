@@ -7,7 +7,6 @@ import HotClassRecommendCard from '@/components/index/hotClassRecommendCard'
 import ShowCaseCard from '@/components/index/showCaseCard'
 import data from '@/assets/staticData/index.json'
 
-import '@/assets/style/pages/index.scss'
 export default function Index() {
   const isLoading = useSelector(state => state.isLoading);
   const dispatch = useDispatch();
@@ -15,12 +14,11 @@ export default function Index() {
     <>{
       Object.keys(data).length !== 0 ?
         <section>
-          <div className='text-primary bg-secondary'>123</div>
           <section>
 
           </section>
           {
-            <section className='bg-gray container-fluid sectionContainer-pd'>
+            <section className='bg-grey container-fluid pb-4'>
               <SectionItemTitle title={data.sections[0].title} />
               <div className='row justify-content-center'>
                 <div className='row col-10'>
@@ -32,32 +30,39 @@ export default function Index() {
             </section>
           }
           {
-            <section className='container-fluid sectionContainer-pd'>
+            <section className='container-fluid pb-4'>
               <SectionItemTitle title={data.sections[1].title} />
               <div className='row justify-content-center'>
                 <div className='row col-10'>
                   {data.sections[1].cards.map(card =>
-                    <HotClassRecommendCard {...card} cardClass='col-lg-4 col-md-6 col-sm-12' key={card.fileName} />
+                    <HotClassRecommendCard {...card} cardClass='col-lg-4 col-md-6 col-sm-12 h-100per' key={card.fileName} />
                   )}
                 </div>
               </div>
-              <Link className='hotClassRecommend__btn'>看更多網頁課程</Link>
+              <div className='text-center'>
+                <Link className='mx-auto d-inline-block mt-5 py-3 px-5 bg-primary text-white normal-radius font-size-4'>
+                  看更多網頁課程
+                  </Link>
+              </div>
             </section>
           }
           {
-            <section className='bg-gray sectionContainer-pd'>
+            <section className='bg-grey container-fluid pb-4'>
               <SectionItemTitle title={data.sections[2].title} />
             </section>
           }
           {
-            <section className='sectionContainer-pd'>
+            <section className='container-fluid pb-4'>
               <SectionItemTitle title={data.sections[3].title} />
-              <div className='row'>
-                {data.sections[3].cards.map(card =>
-                  <ShowCaseCard {...card} cardClass='col-4' key={card.fileName} />
-                )}
+              <div className='row justify-content-center'>
+                <div className='row col-10'>
+                  {data.sections[3].cards.map(card =>
+                    <ShowCaseCard {...card} cardClass='col-md-6 col-lg-4' key={card.fileName} />
+                  )}
+                  <div className='col-12 text-right'>
+                    <Link className='text-primary'>...看更多案例</Link></div>
+                </div>
               </div>
-              <button>...更多案例</button>
             </section>
           }
         </section> :

@@ -4,16 +4,18 @@ import ImgWrapper from '@/components/imgWrapper'
 export default function showCaseCard(props) {
   const { title, content,fileName,cardClass } = props
   return (
-    <div className={`showCase ${cardClass}`}>
+    <div className={cardClass}>
+      <div className='card-border'>
       <ImgWrapper fileName={fileName} path="index/showCase/" alt={title}/>
-      <div className='showCase__title'>
+      <div className='px-3 my-3 font-size-4 text-title'>
         {title}
       </div>
-      <div className='showCase__content'>
+      <div className='px-3 text-content font-size-2 mb-5'>
         <p>
           {content}
         </p>
       </div>
+    </div>
     </div>
   )
 }
