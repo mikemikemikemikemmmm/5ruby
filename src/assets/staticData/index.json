@@ -79,6 +79,12 @@
         "content": "Shopmatic manages the entire ecosystem for anyone wanting to sell online. We go the extra mile to ensure that we help you in every step of the process to grow your business online - from developing your own unique webstore, to listing you on marketplaces and social channels, to providing you insights on how to sell online.",
         "fileName": "shopmatic.jpg"
       }]
+    },
+    {
+      "title": "想更瞭解我們嗎？",
+      "content1": "您可以看看常見問題或者直接線上洽詢，會有親切的客服人員回答您的問題，",
+      "content2": "也可以透過社群網站隨時關注我們的動態。",
+      "fileNames": ["icon-fb.png", "icon-twitter.png"]
     }
   ]
 }

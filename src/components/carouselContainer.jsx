@@ -3,21 +3,40 @@ function CarouselItem() {
 
 }
 export default function CarouselCotainer(props) {
-  const { formFeedSecond = 5 ,children} = props
-  const handleClickNext=()=>{
+  console.log(props.children)
+  const { formFeedSecond = 5, children } = props
+  const ref = useRef({
+    nowItemIndex: 0,
+    second: formFeedSecond,
+    isPause: false
+  });
+
+  const handleClickNext = () => {
 
   }
-  const handleClickPrev=()=>{
-    
+  const handleClickPrev = () => {
+
   }
-  const handleClickPoint=()=>{
-    
+  const handleClickPoint = (itemIndex) => {
+
   }
   return (
-    <div className='carouselCotainer'>
-      <div className='carouselCotainer__nextBtn'></div>
-      <div className='carouselCotainer__prevBtn'></div>
-      <div className='carouselCotainer__pointContainer'></div>
+    <div className='carouselCotainer position-r'>
+      <div className='nextBtn position-a'>
+        <div className='bg-white'></div>
+        <div className='bg-white'></div>
+      </div>
+      <div className='prevBtn position-a'>
+        <div className='bg-white'></div>
+        <div className='bg-white'></div>
+      </div>
+      <div className='pointContainer d-flex positon-a'>
+        {
+          children.map((child, index) => {
+            <div className='d-inline-block'>{index}</div>
+          })
+        }
+      </div>
       <div className='carouselCotainer__childrenContainer'>
         {
           children.map(Child => {

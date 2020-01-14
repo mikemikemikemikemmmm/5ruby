@@ -27,7 +27,7 @@ export default function ImgWrapper(props) {
   if (!src) {
     return <span style={{width:'100%'}} className={imgClass}>loading...</span>
   }
-  return <img style={{width:'100%'}} src={src} alt={alt} className={imgClass}/>
+  return <img style={{maxWidth:'100%'}} src={src} alt={alt} className={imgClass}/>
 }
 
 ImgWrapper.propTypes = {
