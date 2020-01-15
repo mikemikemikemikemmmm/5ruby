@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
 export default function noMatch() {
-  return (
-    <div>no match</div>
-  );
+  return <div>no match</div>;
 }

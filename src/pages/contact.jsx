@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 export default function Contact() {
   return (
     <section>
@@ -11,6 +11,7 @@ export default function Contact() {
       <section>
         <div className="col-5"></div>
         <div className="col-5"></div>
-      </section></section>
-  )
+      </section>
+    </section>
+  );
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 /**
  * @params {object} props - a object include some propertys
  *
@@ -14,23 +14,42 @@ import PropTypes from 'prop-types';
  * @return JSX.element(<img/>) which include correct img src
  */
 export default function ImgWrapper(props) {
-  console.log('imgwrapper')
-  const { alt, imgClass, fileName, path } = props
-  const [src, setSrc] = React.useState(null)
+  console.log("imgwrapper");
+  const { alt, imgClass, fileName, path } = props;
+  const [src, setSrc] = React.useState(null);
   React.useEffect(() => {
     const importSrc = async () => {
       await import(`@/assets/img/${path}${fileName}`)
         .then(imgModule => setSrc(imgModule.default))
-        .catch(() => setSrc('wrong'))
-    }
-    importSrc()
-  }, [])
+        .catch(() => setSrc("wrong"));
+    };
+    importSrc();
+  }, []);
   if (!src) {
-    return <span style={{ maxWidth: '100%', textAlign: 'center' }} className={imgClass}>loading...</span>
-  } else if (src === 'wrong') {
-    <span style={{ maxWidth: '100%', textAlign: 'center' }} className={imgClass}>抱歉，圖片出了點問題</span>
+    return (
+      <span
+        style={{ maxWidth: "100%", textAlign: "center" }}
+        className={imgClass}
+      >
+        loading...
+      </span>
+    );
+  } else if (src === "wrong") {
+    <span
+      style={{ maxWidth: "100%", textAlign: "center" }}
+      className={imgClass}
+    >
+      抱歉，圖片出了點問題
+    </span>;
   } else {
-    return <img style={{ maxWidth: '100%' }} src={src} alt={alt} className={imgClass} />
+    return (
+      <img
+        style={{ maxWidth: "100%" }}
+        src={src}
+        alt={alt}
+        className={imgClass}
+      />
+    );
   }
 }
 
@@ -39,5 +58,5 @@ ImgWrapper.propTypes = {
   alt: PropTypes.string,
   imgClass: PropTypes.string,
   path: PropTypes.string,
-  fileName: PropTypes.string,
+  fileName: PropTypes.string
 };

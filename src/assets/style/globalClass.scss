@@ -67,6 +67,12 @@ button {
   border: 1px solid #ddd;
 }
 
+.classRecommend__img {
+  height: 78px;
+  width: 78px;
+  border-radius: 50%;
+}
+
 /*font*/
 @each $key,
 $size in $fontSizeMap {
@@ -86,6 +92,14 @@ $size in $fontSizeMap {
 
 .w-100per {
   width: 100%;
+}
+
+.w-80per {
+  width: 80%;
+}
+
+.vw-100 {
+  width: 100vw
 }
 
 /*layout*/
