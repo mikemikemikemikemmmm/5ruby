@@ -1,0 +1,18 @@
+.carouselItemOutContainer {
+  perspective: 1000px;
+
+}
+
+.carouselItemContainer {
+  white-space: nowrap;
+
+}
+
+.carouselItem {
+  display: inline-block;
+  position: relative;
+  transition: transform 1s;
+  &.carouselItem--active{
+    display: block;
+  }
+}

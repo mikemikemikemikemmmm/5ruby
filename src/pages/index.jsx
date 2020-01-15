@@ -6,12 +6,21 @@ import HotClassRecommendCard from '@/components/index/hotClassRecommendCard'
 import ShowCaseCard from '@/components/index/showCaseCard'
 import data from '@/assets/staticData/index.json'
 import ImgWrapper from '@/components/imgWrapper'
-
+import Carousel from '@/components/carouselContainer'
 export default function Index() {
   return (
     <>{
       Object.keys(data).length !== 0 ?
         <section>
+          <Carousel>
+            {
+              data.carousel.map(item =>
+                  <Link to={item.to} key={item.fileName}>
+                    <ImgWrapper fileName={item.fileName} path='index/carousel/' />
+                  </Link>
+              )
+            }
+          </Carousel>
           <section>
 
           </section>
@@ -63,8 +72,8 @@ export default function Index() {
                 }
               </div>
               <div className="col-12 text-center">
-                  <ImgWrapper path='index/knowMore/' imgClass="mx-4" fileName='icon-fb.png' />
-                  <ImgWrapper path='index/knowMore/' imgClass="mx-4" fileName='icon-twitter.png' />
+                <ImgWrapper path='index/knowMore/' imgClass="mx-4" fileName='icon-fb.png' />
+                <ImgWrapper path='index/knowMore/' imgClass="mx-4" fileName='icon-twitter.png' />
               </div>
             </SectionContainer>
           }

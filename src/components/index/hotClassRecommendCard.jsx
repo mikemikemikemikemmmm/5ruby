@@ -18,7 +18,7 @@ export default function hotClassRecommendCard(props) {
     <div className={cardClass} >
       <div className='card-border'>
         <ImgWrapper fileName={fileName} path='index/hotClass/' imgClass='hotClassRecommend__img' />
-        <h4 className='px-3 py-2 font-bold font-size-4'>
+        <h4 className='px-3 py-2 font-w-bold font-size-4'>
           {title}
         </h4>
         <div className='px-3'>

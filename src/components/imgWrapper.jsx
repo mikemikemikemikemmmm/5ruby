@@ -9,9 +9,9 @@ import PropTypes from 'prop-types';
  *
  * @example
  *
- * 'if img path is assets/img/header/1.jpg, then src is header/1.jpg.'
+ * 'if real pathof img is assets/img/header/1.jpg, then set src to header/1.jpg.'
  *
- * @return JSX.element which include correct img src
+ * @return JSX.element(<img/>) which include correct img src
  */
 export default function ImgWrapper(props) {
   console.log('imgwrapper')
@@ -19,15 +19,19 @@ export default function ImgWrapper(props) {
   const [src, setSrc] = React.useState(null)
   React.useEffect(() => {
     const importSrc = async () => {
-      const data = await import(`@/assets/img/${path}${fileName}`)
-      setSrc(data.default)
+      await import(`@/assets/img/${path}${fileName}`)
+        .then(imgModule => setSrc(imgModule.default))
+        .catch(() => setSrc('wrong'))
     }
     importSrc()
   }, [])
   if (!src) {
-    return <span style={{width:'100%'}} className={imgClass}>loading...</span>
+    return <span style={{ maxWidth: '100%', textAlign: 'center' }} className={imgClass}>loading...</span>
+  } else if (src === 'wrong') {
+    <span style={{ maxWidth: '100%', textAlign: 'center' }} className={imgClass}>抱歉，圖片出了點問題</span>
+  } else {
+    return <img style={{ maxWidth: '100%' }} src={src} alt={alt} className={imgClass} />
   }
-  return <img style={{maxWidth:'100%'}} src={src} alt={alt} className={imgClass}/>
 }
 
 ImgWrapper.propTypes = {

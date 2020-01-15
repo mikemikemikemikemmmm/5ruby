@@ -27,7 +27,9 @@ export default function App() {
         <Header />
         <main>
           <Switch>
-            <Route path="/" component={Index} />
+            <Route exact path="/" component={Index} />
+            <Route path="/contact" component={Contact} />
+            <Route component={NoMatch} />
           </Switch>
         </main>
         <Footer />

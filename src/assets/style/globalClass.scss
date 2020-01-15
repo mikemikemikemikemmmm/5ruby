@@ -6,7 +6,6 @@ $colorCode in $colorMap {
   .text-#{$key} {
     color: $colorCode;
   }
-
   .bg-#{$key} {
     background-color: $colorCode;
   }
@@ -47,6 +46,11 @@ a {
 .knowMore_content{
   line-height: 38px;
 }
+
+.card-border {
+  border: 1px solid #ddd;
+}
+
 /*font*/
 @each $key,
 $size in $fontSizeMap {
@@ -54,13 +58,19 @@ $size in $fontSizeMap {
     font-size: $size;
   }
 }
-.font-bold{
+.font-w-bold{
   font-weight: 700;
 }
+
 /*size*/
 .h-100per{
   height: 100%;
 }
+.w-100per{
+  width: 100%;
+}
+
+/*layout*/
 .normal-radius {
   border-radius: $radiusVar;
 }
@@ -76,10 +86,6 @@ $size in $fontSizeMap {
 }
 .text-right{
   text-align: right;
-}
-
-.card-border {
-  border: 1px solid #ddd;
 }
 
 /*special*/

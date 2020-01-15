@@ -1,8 +1,18 @@
 {
   "carousel": [{
-    "fileName": "",
-    "href": ""
-  }],
+    "fileName": "5xruby.jpg",
+    "to": "/"
+  },{
+    "fileName": "astro.jpg",
+    "to": "/"
+  },{
+    "fileName": "imcoding.jpg",
+    "to": "/"
+  },{
+    "fileName": "ruby.jpg",
+    "to": "/"
+  }
+],
   "sections": [{
       "title": "關於五倍紅寶石 About 5xRuby",
       "cards": [{
