@@ -12,12 +12,12 @@ export default function Index() {
     <>{
       Object.keys(data).length !== 0 ?
         <section>
-          <Carousel>
+          <Carousel itemKeyClass='bannerCarousel'>
             {
               data.carousel.map(item =>
-                  <Link to={item.to} key={item.fileName}>
-                    <ImgWrapper fileName={item.fileName} path='index/carousel/' />
-                  </Link>
+                <Link to={item.to} key={item.fileName}>
+                  <ImgWrapper fileName={item.fileName} path='index/carousel/' />
+                </Link>
               )
             }
           </Carousel>
@@ -43,7 +43,24 @@ export default function Index() {
             </SectionContainer>
           }
           {
-            <SectionContainer title={data.sections[2].title} isGrey={true}></SectionContainer>
+            <SectionContainer title={data.sections[2].title} isGrey={true}>
+              <Carousel isClassRecommend={true} itemKeyClass='classRecommendCarousel'>
+                {
+                  data.sections[2].cards.map(item =>
+                    <div key={item.fileName} className='flex-center '>
+                      <div>
+                        <ImgWrapper fileName={item.fileName} path='index/classRecommend/' />
+                      </div>
+                      <div className='ml-5'>
+                        <div>{item.content}</div>
+                        <div className='text-primary font-size-5 mt-3'>{item.authorName}</div>
+                        <div>{item.job}</div>
+                      </div>
+                    </div>
+                  )
+                }
+              </Carousel>
+            </SectionContainer>
           }
           {
             <SectionContainer title={data.sections[3].title}>

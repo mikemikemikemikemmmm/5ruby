@@ -1,3 +1,6 @@
+.carouselItemOutContainer{
+  overflow-x: hidden;
+}
 .carouselItem {
   transition: transform 1s;
 }
@@ -9,12 +12,17 @@
   border: none;
   font-size: 80px;
   text-shadow: 0 0 3px black;
+  color: white;
+  transition: color .5s;
   &--next {
     right: 0;
   }
 
   &--prev {
     left: 0;
+  }
+  &:hover{
+    color:gray
   }
 }
 
@@ -29,6 +37,9 @@
     background-color: #fff;
     border-radius: 50%;
     transition: background-color 1s;
+    &:hover{
+      background-color: gray;
+    }
     &--active {
       background-color: #D90845;
     }

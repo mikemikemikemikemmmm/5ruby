@@ -6,6 +6,7 @@ $colorCode in $colorMap {
   .text-#{$key} {
     color: $colorCode;
   }
+
   .bg-#{$key} {
     background-color: $colorCode;
   }
@@ -22,32 +23,43 @@ body {
 a {
   text-decoration: none;
 }
-button{
-  &:hover{
+
+button {
+  &:hover {
     cursor: pointer;
   }
+
+  &:focus {
+    outline: 0;
+  }
+
 }
+
 /*position*/
-.position-r{
+.position-r {
   position: relative;
 }
-.position-a{
+
+.position-a {
   position: absolute;
 }
 
 /*component*/
-.titleUnderLine{
+.titleUnderLine {
   height: 3px;
   width: 80px;
 }
-.hotClass__content{
+
+.hotClass__content {
   height: 100px;
 }
-.aboutCard__img{
+
+.aboutCard__img {
   width: 120px;
   height: 120px;
 }
-.knowMore_content{
+
+.knowMore_content {
   line-height: 38px;
 }
 
@@ -62,15 +74,17 @@ $size in $fontSizeMap {
     font-size: $size;
   }
 }
-.font-w-bold{
+
+.font-w-bold {
   font-weight: 700;
 }
 
 /*size*/
-.h-100per{
+.h-100per {
   height: 100%;
 }
-.w-100per{
+
+.w-100per {
   width: 100%;
 }
 
@@ -85,14 +99,15 @@ $size in $fontSizeMap {
   align-items: center;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
-.text-right{
+
+.text-right {
   text-align: right;
 }
 
 /*special*/
-.overflow-h{
+.overflow-h {
   overflow: hidden;
 }
