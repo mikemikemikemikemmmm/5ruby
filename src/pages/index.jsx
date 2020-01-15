@@ -21,9 +21,6 @@ export default function Index() {
               )
             }
           </Carousel>
-          <section>
-
-          </section>
           {
             <SectionContainer title={data.sections[0].title} isGrey={true}>
               {data.sections[0].cards.map(card =>

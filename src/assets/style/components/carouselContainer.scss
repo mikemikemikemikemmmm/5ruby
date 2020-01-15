@@ -1,18 +1,36 @@
-.carouselItemOutContainer {
-  perspective: 1000px;
-
-}
-
-.carouselItemContainer {
-  white-space: nowrap;
-
-}
-
 .carouselItem {
-  display: inline-block;
-  position: relative;
   transition: transform 1s;
-  &.carouselItem--active{
-    display: block;
+}
+
+.arrowBtn {
+  width: 10%;
+  z-index: 100;
+  background-color: transparent;
+  border: none;
+  font-size: 80px;
+  text-shadow: 0 0 3px black;
+  &--next {
+    right: 0;
+  }
+
+  &--prev {
+    left: 0;
+  }
+}
+
+.pointContainer {
+  z-index: 100;
+  bottom: 30px;
+  .carouselPoint {
+    height: 12px;
+    width: 12px;
+    border: 1px #fff solid;
+    margin: 0 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: background-color 1s;
+    &--active {
+      background-color: #D90845;
+    }
   }
 }

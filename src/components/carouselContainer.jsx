@@ -2,8 +2,7 @@ import React from 'react'
 import '@/assets/style/components/carouselContainer.scss'
 
 export default function CarouselCotainer(props) {
-  const { formFeedSecond = 1, children } = props
-  const itemLength = children.length
+  const { formFeedSecond = 5, children } = props
   const refs = React.useRef({
     nowIndex: 0,
     second: formFeedSecond,
@@ -12,6 +11,7 @@ export default function CarouselCotainer(props) {
     maxIndex: null,
     isAutoDirectionRight: true
   });
+  const [nowIndex,setNowIndex] = React.useState(0)
   const _refs = refs.current
   React.useEffect(() => {
     const runAutoRotate = () => {
@@ -64,27 +64,23 @@ export default function CarouselCotainer(props) {
 
   return (
     <div className='carouselCotainer position-r w-100per h-100per'>
-      <button className='nextBtn position- h-100per' onClick={() => handleClick('next')}>
-        next
-        <div className='bg-white'></div>
-        <div className='bg-white'></div>
+      <button className='arrowBtn arrowBtn--next position-a h-100per flex-center text-white' onClick={() => handleClick('next')}>
+        &gt;
       </button>
-      <button className='prevBtn position- h-100per' onClick={() => handleClick('prev')}>
-        prev
-        <div className='bg-white'></div>
-        <div className='bg-white'></div>
+      <button className='arrowBtn arrowBtn--prev position-a h-100per flex-center text-white' onClick={() => handleClick('prev')}>
+        &lt;
       </button>
-      <div className='pointContainer d-flex positon-'>
+      <div className='pointContainer flex-center position-a w-100per'>
         {
           children.map((child, index) =>
-            <button className='d-inline-block' onClick={() => handleClick(index)}></button>
+            <button className={`carouselPoint carouselPoint ${_refs.nowIndex === index?'carouselPoint--active':''}`} onClick={() => handleClick(index)}></button>
           )
         }
       </div>
       <div className='carouselItemOutContainer position-r'>
-        <div className='carouselItemContainer h-100per'>
+        <div className='carouselItemContainer h-100per' style={{ whiteSpace: 'nowrap' }}>
           {children.map(item =>
-            <div className='carouselItem'>
+            <div className='carouselItem d-inline-block position-r'>
               {item}
             </div>
           )}

@@ -40,9 +40,6 @@ export default function Header() {
       <Link className="px-3 py-1" to="/">
         <ImgWrapper fileName='logo.png' path='header/' />
       </Link>
-      <Link className="px-3 py-1" to="/contact">
-        <ImgWrapper fileName='logo.png' path='header/' />
-      </Link>
       <nav className="ml-auto d-inline-flex">
         {
           data ?
