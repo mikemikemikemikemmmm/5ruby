@@ -1,7 +1,7 @@
-import React from "react";
-import SectionContainer from "@/components/SectionContainer";
-import ImgWrapper from "@/components/imgWrapper";
-import data from "@/assets/staticData/footer.json";
+import React from 'react';
+import SectionContainer from '@/components/SectionContainer';
+import ImgWrapper from '@/components/imgWrapper';
+import data from '@/assets/staticData/footer.json';
 
 export default function Footer() {
   return (
@@ -10,21 +10,27 @@ export default function Footer() {
         <footer>
           <SectionContainer
             hasTitleUnderLine={false}
-            isGrey={true}
-            isFooter={true}
+            isGrey
             className="py-5"
           >
             <div className="col-md-3 col-12">
               <div>
-                <ImgWrapper path="footer/" fileName="companysBtn.png" />
+                <ImgWrapper
+                  path="footer/"
+                  imgClass="w-100per"
+                  fileName="companysBtn.png"
+                />
               </div>
               <div>
-                <ImgWrapper path="footer/" fileName="cakeresume.png" />
+                <ImgWrapper
+                  path="footer/"
+                  fileName="cakeresume.png"
+                />
               </div>
             </div>
             <div className="col-md-9 col-12">
               <div className="col-12">
-                {data.nav.map(item => (
+                {data.nav.map((item) => (
                   <div className="my-1 mr-5 text-content font-size-2 d-inline-block">
                     {item.title}
                   </div>
@@ -33,11 +39,11 @@ export default function Footer() {
               <div className="col-12 mt-4">
                 <div className="row">
                   <div className="col-12 col-md-4 col-xl-3">
-                    <div className="text-primary font-bold font-size-4">
+                    <div className="text-primary font-w-bold font-size-4">
                       {data.phone}
                     </div>
                     <div className="font-size-1">{data.openTime}</div>
-                    <div></div>
+                    <div />
                   </div>
                   <div className="col-12 col-md-8 col-xl-9 font-size-2">
                     <div>{data.question}</div>

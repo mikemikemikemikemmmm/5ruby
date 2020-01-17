@@ -1,8 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ImgWrapper from "@/components/imgWrapper";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ImgWrapper from '@/components/imgWrapper';
+
 export default function about5RubyCard(props) {
-  const { title, content, cardClass, fileName, title2 } = props;
+  const {
+    title = '', content = '', cardClass = '', fileName = '', title2 = '',
+  } = props;
   return (
     <div className={`text-center ${cardClass}`}>
       <div className="aboutCard__img mx-auto">
@@ -23,5 +26,7 @@ export default function about5RubyCard(props) {
 about5RubyCard.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string
+  title2: PropTypes.string.isRequired,
+  fileName: PropTypes.string.isRequired,
+  cardClass: PropTypes.string.isRequired,
 };

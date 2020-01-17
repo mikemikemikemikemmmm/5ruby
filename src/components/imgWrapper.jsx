@@ -14,7 +14,6 @@ import PropTypes from "prop-types";
  * @return JSX.element(<img/>) which include correct img src
  */
 export default function ImgWrapper(props) {
-  console.log("imgwrapper");
   const { alt, imgClass, fileName, path } = props;
   const [src, setSrc] = React.useState(null);
   React.useEffect(() => {
@@ -44,10 +43,10 @@ export default function ImgWrapper(props) {
   } else {
     return (
       <img
-        style={{ maxWidth: "100%" }}
+        style={{ height: "auto" ,verticalAlign:'middle'}}
         src={src}
         alt={alt}
-        className={imgClass}
+        className={`mw-100per ${imgClass}`}
       />
     );
   }

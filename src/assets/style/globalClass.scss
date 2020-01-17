@@ -68,8 +68,7 @@ button {
 }
 
 .classRecommend__img {
-  height: 78px;
-  width: 78px;
+  max-width: 78px;
   border-radius: 50%;
 }
 
@@ -101,6 +100,9 @@ $size in $fontSizeMap {
 .vw-100 {
   width: 100vw
 }
+.mw-100per{
+  max-width: 100%;
+}
 
 /*layout*/
 .normal-radius {
@@ -111,6 +113,20 @@ $size in $fontSizeMap {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.j-c-c {
+
+  justify-content: center;
+}
+
+.a-i-c {
+  align-items: center;
+
+}
+
+.a-i-s {
+  align-items: stretch;
 }
 
 .text-center {
