@@ -4,7 +4,7 @@ import '@/assets/style/components/carouselContainer.scss';
 
 export default function CarouselCotainer(props) {
   const {
-    formFeedSecond = 2,
+    formFeedSecond = 5,
     children,
     hasArrow = true,
     itemKeyClass = '',
